@@ -1,0 +1,79 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-23 13:55:27
+ * @LastEditTime: 2020-07-23 17:30:37
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \base-nodes\css\text-align.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>text-align</title>
+  <style>
+    h2 {
+      text-align: center;
+    }
+
+    .date {
+      text-align: right;
+    }
+
+    .main {
+      text-align: justify;
+      /* text-align-last: justify; */
+    }
+
+    .main::after {
+      content: '';
+      width: 100%;
+      display: inline-block;
+    }
+
+    .title {
+      width: 100px;
+      text-align: justify;
+      /* text-align-last: justify; */
+      float: left;
+    }
+
+    .title:after {
+      content: '';
+      width: 100%;
+      display: inline-block;
+      height: 0;
+      /* border: 1px solid green;*/
+    }
+
+    input {
+      width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>text-align</h2>
+  <p class="date">2020-07-23</p>
+  <p class="main">text-align 定义行内元素相对于他的块父元素对齐方式。有left center right；justify：向两侧对其，最后一行无效；
+  </p>
+  <p>切换窗口大小，可以看一下 &quot justify &quot是怎么工作的</p>
+
+  <p>text-align:justify应用场景</p>
+
+  <div class="content">
+    <span class="title">姓名</span><input><br><br>
+    <span class="title">电话号码</span><input>
+  </div>
+
+  <h2>&quot text-align:justify &quot 对最后一行不起作用，如果只有一行也不会有效果；</h2>
+  <p>如果想使其在第一行（仅有一行）或最后一行起作用实现方案：</p>
+  <p> 1. 使用空标签，width：100%;display:inline-block占位最后一行</p>
+  <p> 2. 增加text-align-last:justify 应该会有兼容性问题</p>
+
+</body>
+
+</html>
