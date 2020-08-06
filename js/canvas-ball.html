@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas-ball</title>
+</head>
+
+<body>
+  <canvas id='ball'></canvas>
+  <script>
+    let c = document.getElementById('ball');
+    let ctx = c.getContext('2d');
+    function Ball(x, y, r, color) {
+
+      ctx.arc(x, y, r, 0, 2 * Math.PI, false);
+      ctx.fillColor = color
+      ctx.fill();
+    }
+
+    // window.onload = function () {
+    //   Ball(100, 100, 20, 'red')
+    // }
+
+    window.addEventListener('mousedown', function (e) {
+      console.log(e)
+      // let w = window.innerWidth;
+      // let h = window.innerHeight;
+      // ctx.clearRect(0, 0, w, h);
+
+      new Ball(e.clientX, e.clientY, 20, 'red')
+    })
+  </script>
+</body>
+
+</html>

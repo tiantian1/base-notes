@@ -1,0 +1,51 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-29 14:41:59
+ * @LastEditTime: 2020-07-31 17:48:08
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \base-notes\js\动态监听DOM宽高.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>监听DOM宽高变化</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+
+    let box = document.getElementsByClassName('box')
+    console.log(box)
+    console.log(window.getComputedStyle(box[0], 'backgroundColor'))
+    console.log(box[0].style)
+    /* var _timer = null;
+     window.onresize = function (e) {
+       console.log(_timer)
+       if (_timer) {
+         clearTimeout(_timer)
+       } else {
+         _timer = setTimeout(function () {
+           console.log("change...")
+         }, 500)
+       }
+     }*/
+     //MutationObserver
+    /**
+     * 空元素，常用的空元素
+     * */
+  </script>
+</body>
+
+</html>

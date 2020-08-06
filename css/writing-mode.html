@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>writing-mode</title>
+  <style>
+    .block {
+      width: 100px;
+      height: 100px;
+      background-color: aquamarine;
+      color: #333333;
+      direction: rtl;
+      /**direction改变的是内联元素的文本书写方向 rtl   ltr**/
+      writing-mode: vertical-rl;
+      /**writing-mode可以对块状元素产生影响，直接改变了css世界的纵横规则*
+      css规范：
+      writing-mode:vertical-rl 垂直方向从右到左
+      writing-mode:vertical-lr; 垂直方向从左到右
+      writing-mode:horizontal-tb;默认值水平方向，从上到下
+
+      ie规则
+      writing-mode：lr-tb； // 默认值 ： 从左到右，从上到下。
+　　  writing-mode：tb-rl； //从上到下，从右向左。
+　　  writing-mode：tb-lr（IE8+）； //水平方向，从上到下，从左到右。
+　　  如果需要兼容IE7，关注初始值：lr-tb和tb-rl，对css3规范中的horizontal-tbhebertical-rl。
+      */
+    }
+
+    .block2 {
+      width: 100px;
+      height: 100px;
+      background-color: coral;
+      color: #333333;
+      direction: rtl;
+      /**direction规定文本的书写方向 rtl   ltr**/
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="block">
+    <p>123</p>
+    <p>234</p>
+    <p>345</p>
+  </div>
+  <div class="block2">
+    <p>123</p>
+    <p>234</p>
+    <p>345</p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不使用css和id使倒数第三个li背景色为红色</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script>
+    let liArr = document.getElementsByTagName('li');
+
+    let aimLi = liArr[liArr.length - 3]
+
+    // let _liArr = Array.from(liArr)
+    // let aimLi = _liArr[_liArr.length - 3]
+    aimLi.style.backgroundColor = 'red'
+  </script>
+</body>
+
+</html>
