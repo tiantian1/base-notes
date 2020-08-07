@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas 渐变矩形</title>
+</head>
+
+<body>
+  <canvas id='canvas'></canvas>
+  <script>
+    let canvas = document.querySelector('#canvas')
+    canvas.width = 200;
+    canvas.height = 200;
+
+    let ctx = canvas.getContext('2d')
+    //画矩形
+    // ctx.rect(0, 0, 200, 100)
+
+    //用线画矩形
+    // ctx.moveTo(100, 100);
+    // ctx.lineTo(355, 100);
+    // ctx.strokeStyle = "000"
+    // ctx.stroke()
+    // ctx.lineWidth = 30;
+
+    //  线是由点组成的
+    ctx.lineWidth = 30;
+    for (var i = 0; i < 255; i++) {
+      ctx.beginPath();
+      ctx.moveTo(100 + i - 1, 100);
+      ctx.lineTo(101 + i, 100);
+      ctx.strokeStyle = 'rgb(' + i + ',' + i + ',' + i + ')';
+      ctx.stroke();
+    }
+    // ctx.strokeStyle = '#ccc'
+    // ctx.stroke()
+  </script>
+</body>
+
+</html>

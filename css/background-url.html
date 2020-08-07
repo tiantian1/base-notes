@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      background-image: url(#);
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <img>
+  </div>
+  <iframe src="http://www.microsoft.com"></iframe>
+  <iframe src="http://www.google.com"></iframe>
+  <iframe src="http://www.youtube.com"></iframe>
+  <script>
+    for (var i = 0; i < frames.length; i++) {
+      frames[i].location = "http://www.runoob.com"
+    }
+  </script>
+</body>
+
+</html>

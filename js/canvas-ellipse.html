@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas 画椭圆</title>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    //获取canvas标签
+    let canvas = document.querySelector("#canvas")
+    canvas.width = 800;
+    canvas.height = 800;
+    //创建画笔
+    let ctx = canvas.getContext('2d')
+    ctx.ellipse(500, 400, 300, 200, 0, 0, 2 * Math.PI)
+    ctx.fillStyle = "#ccc";
+    ctx.strokeStyle = "#000";
+    ctx.fill()
+    ctx.stroke();
+  </script>
+</body>
+
+</html>

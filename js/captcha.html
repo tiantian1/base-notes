@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>随机生成6位验证码并验证</title>
+</head>
+
+<body>
+  <!-- 
+  功能：
+  1.随机生成指定长度的验证码，可以是数字或字母
+  2.校验时不验证大小写
+
+  s1
+  数字和字母的编码 Unicode编码 
+  0~9: 48-57
+  A-Z: 65-90
+  a-z: 97-122
+  String.fromCharCode()
+
+-->
+  <div>
+    <input class="inputText" type="text">
+    <input class="captcha" type="text" readonly>
+    <button class="refresh">刷新</button>
+    <button class="submit">提交</button>
+  </div>
+  <script>
+    function getCode(len = 4) {
+      let validateCode = "";
+      while (validateCode.length < len) {
+        let rand = Math.floor(Math.random() * 75) + 48//获取48~122的随机整数
+        //判断数字是否在数字和大小写字母Unicode编码范围内
+        if (rand >= 48 && rand <= 57 || rand >= 65 && rand <= 90 || rand >= 97 && rand <= 122) {
+          validateCode += String.fromCharCode(rand)
+        }
+      }
+      console.log(validateCode)
+      return validateCode
+    }
+    function refreshCaptcha() {
+      let captcha = getCode(6);
+      document.getElementsByClassName('captcha')[0].value = captcha
+    }
+    window.onload = function () {
+      refreshCaptcha()
+      //刷新验证码
+      document.getElementsByClassName('refresh')[0].onclick = function () {
+        refreshCaptcha()
+      }
+      //提交验证码
+      document.getElementsByClassName('submit')[0].onclick = function () {
+        let captcha = document.getElementsByClassName('captcha')[0].value.toLowerCase()
+        let inputText = document.getElementsByClassName('inputText')[0].value.toLowerCase()
+        // console.log(captcha, inputText)
+        if (inputText) {
+          if (inputText === captcha) {
+            alert('提交成功')
+          } else {
+            alert('验证码错误')
+          }
+        } else {
+          alert('请输入验证码')
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

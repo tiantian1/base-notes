@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>width</title>
+  <style>
+    /* .box {
+      width: 150px;
+      height: 100px;
+      background-color: aquamarine;
+    } */
+
+    .content {
+      display: block;
+      /* width: max-content; */
+      width: min-content;
+      background-color: beige;
+    }
+
+    .content2 {
+      width: fill-available;
+      display: inline-block;
+      /* display: block; */
+      background-color: beige;
+    }
+
+    .content3 {
+      width: fit-content;
+      display: block;
+      background-color: beige;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="content">
+      <img src="https://www.wanmeiqiye.com/new/images/logo.png">
+      <p>display:inline-block/block 宽度随文字宽度，加上max-content/min-content后会跟随定宽最大最小宽度，不会进行收缩;
+      </p>
+    </div>
+    <div class="content2">
+      <img src="https://www.wanmeiqiye.com/new/images/logo.png">
+      <p>fill-avaliable 按宽度100%自动填充 block和inlin-block 都适用</p>
+    </div>
+    <div class="content3">
+      <img src="https://www.wanmeiqiye.com/new/images/logo.png">
+      <p>fit-content 实现元素收缩的同时，保持block水平。使用margin:auto
+        实现向内自适应的同时的居中效果。</br>div的宽度不是100%，而是自适应内容宽度。很好的实现了block的水平居中，宽度向内自适应。
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>
