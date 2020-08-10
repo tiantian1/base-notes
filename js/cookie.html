@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie</title>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+</head>
+
+<body>
+  <script>
+    window.onload = function () {
+      let user = {
+        name: '甜甜',
+        age: 3
+      }
+      Cookies.set('user', user, {
+        expires: 7
+      })
+      Cookies.set('userTest', "lisa", {
+        expires: 7
+      })
+      const res = Cookies.get('user')
+      console.log(res)
+
+      console.log(document.cookie)
+      let co = getCookie()
+      console.log(co)
+      setCookie('age', 16, 1)
+      // delCookie('user')
+    }
+    /**
+     * 原生js 设置cookie
+     * */
+    function setCookie(name, value, days) {
+      var d = new Date();
+      d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+      var expires = d.toGMTString();
+      let item = `${name}=${value};expires=${expires}`
+      //直接设置cookie赋值语句
+      document.cookie = item
+    }
+    /**
+     *原生js 获取cookie,返回json格式
+     * */
+    function getCookie() {
+      let cookieArr = document.cookie.split(';');
+      let cookies = {};
+      for (item of cookieArr) {
+        let _item = item.split('=');
+        cookies[_item[0].trim()] = _item[1].trim()
+      }
+      return cookies
+    }
+
+    /**
+     * 删除cookie ，直接把过期时间设为0或为负值或为当前时间之前
+     * 
+     * */
+    function delCookie(name) {
+      document.cookie = name + "=;expires=" + (new Date(0)).toGMTString();
+
+    }
+  </script>
+</body>
+
+</html>
