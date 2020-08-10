@@ -1,0 +1,21 @@
+{
+  "name": "base-notes",
+  "version": "1.0.0",
+  "description": "一些自己的总结",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiantian1/base-notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiantian1/base-notes/issues"
+  },
+  "homepage": "https://github.com/tiantian1/base-notes#readme",
+  "dependencies": {}
+}
